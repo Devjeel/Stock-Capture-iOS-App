@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var highLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var lowLabel: UILabel!
-
+    @IBOutlet weak var dateLabel: UILabel!
+    
     @IBOutlet weak var stockTextInput: UITextField!
     
     //MARK: IBActions
@@ -65,6 +66,9 @@ class ViewController: UIViewController {
                                 }
                                 if let price = quoteDictionary.value(forKey: "05. price") {
                                     self.priceLabel.text = price as? String
+                                }
+                                if let latest = quoteDictionary.value(forKey: "07. latest trading day") {
+                                self.dateLabel.text = latest as? String
                                 }
                             }
                         } else {
